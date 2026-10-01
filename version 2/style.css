@@ -88,8 +88,7 @@ button { cursor: pointer; }
 .header { position: sticky; top: 0; z-index: 46; background: var(--bg); transition: transform .6s var(--ease), box-shadow .4s; }
 .header.is-hidden { transform: translateY(-100%); }
 .header.is-compact { box-shadow: 0 1px 0 var(--line); }
-.header .wrap { display: flex; align-items: center; gap: 32px; height: 74px; transition: height .5s var(--ease); }
-.header.is-compact .wrap { height: 64px; }
+.header .wrap { display: flex; align-items: center; gap: 32px; height: 74px; }
 .logo { color: var(--blue); display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; letter-spacing: -.03em; flex: none; }
 .logo img { width: 30px; height: 30px; transition: transform .8s var(--ease); }
 .fcol .logo:hover img { transform: rotate(-180deg); }

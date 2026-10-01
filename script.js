@@ -7,10 +7,14 @@
 
   // Header: прячем при скролле вниз, показываем при скролле вверх
   const header = document.querySelector('.header');
+  // Шапку ведёт только нативный scroll (Lenis тоже двигает страницу через window.scrollTo).
+  // Раньше параллельно слушалось событие Lenis, значения расходились, и шапка дёргалась.
   let lastY = 0;
   const onScroll = (y) => {
     header.classList.toggle('is-scrolled', y > 40);
-    if (!root.classList.contains('menu-open') && !header.classList.contains('dd-open')) header.classList.toggle('is-hidden', y > 400 && y > lastY);
+    const d = y - lastY;
+    if (Math.abs(d) < 8) return; // игнорируем мелкую дрожь
+    if (!root.classList.contains('menu-open') && !header.classList.contains('dd-open')) header.classList.toggle('is-hidden', d > 0 && y > 400);
     lastY = y;
   };
   window.addEventListener('scroll', () => onScroll(window.scrollY), { passive: true });
@@ -131,7 +135,6 @@
   if (window.Lenis) {
     lenis = new Lenis({ duration: 1.15, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);
-    lenis.on('scroll', ({ scroll }) => onScroll(scroll));
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
