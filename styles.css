@@ -330,7 +330,7 @@ html:not(.js) .loader { display: none; }
 .acc__item.is-open .acc__a { opacity: 1; transform: none; transition-delay: .1s; }
 
 /* ============ Factory banner ============ */
-.factory { position: relative; margin-top: 130px; height: 703px; overflow: hidden; color: #fff; }
+.factory { position: relative; margin-top: 130px; height: 880px; overflow: hidden; color: #fff; }
 .factory__bg { position: absolute; inset: -12% 0 -12% -14px; }
 .factory__bg img { width: 100%; height: 100%; object-fit: cover; }
 .factory__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(20deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .15) 60%, rgba(0, 0, 0, 0) 100%); }
