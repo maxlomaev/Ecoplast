@@ -1,3 +1,8 @@
+/* Hauora берётся из системы (local), если установлен; иначе — Manrope */
+@font-face { font-family: "HauoraL"; src: local("Hauora Regular"), local("Hauora-Regular"), local("Hauora"); font-weight: 400; }
+@font-face { font-family: "HauoraL"; src: local("Hauora Medium"), local("Hauora-Medium"); font-weight: 500; }
+@font-face { font-family: "HauoraL"; src: local("Hauora SemiBold"), local("Hauora-SemiBold"); font-weight: 600; }
+
 :root {
   /* фирменные цвета */
   --bg: #f6f7f9;
@@ -12,7 +17,7 @@
   --on-dark-line: rgba(246, 247, 249, .22);
 
   --sans: "Onest", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --mono: "HauoraL", "Manrope", system-ui, sans-serif;
   --pad: 48px;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
@@ -29,8 +34,8 @@ button { cursor: pointer; }
 ::selection { background: var(--red); color: #fff; }
 
 .wrap { max-width: 1440px; margin: 0 auto; padding: 0 var(--pad); }
-.mono { font: 400 12px/1.4 var(--mono); letter-spacing: .04em; color: var(--grey); text-transform: uppercase; }
-.label { font: 500 12px/1.4 var(--mono); letter-spacing: .1em; color: var(--grey); text-transform: uppercase; }
+.mono { font: 500 13px/1.4 var(--mono); letter-spacing: .06em; color: var(--grey); text-transform: uppercase; }
+.label { font: 500 13px/1.4 var(--mono); letter-spacing: .08em; color: var(--grey); text-transform: uppercase; }
 .label--red { color: var(--red); }
 .dot { color: var(--red); }
 
@@ -206,7 +211,7 @@ button { cursor: pointer; }
 .cat__arrow:hover { color: var(--red); }
 .cat__subs { position: absolute; left: 28px; right: 28px; top: var(--subs-top, 84px); margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; pointer-events: none; }
 .cat__subs li { opacity: 0; transform: translateY(12px); transition: opacity .35s var(--ease), transform .5s var(--ease); }
-.cat__subs a { font: 400 13px/1.4 var(--mono); color: var(--grey); text-decoration: underline; text-underline-offset: 3px; transition: color .25s; }
+.cat__subs a { font: 400 14px/1.4 var(--mono); color: var(--grey); text-decoration: underline; text-underline-offset: 3px; transition: color .25s; }
 .cat__subs a:hover { color: var(--red); }
 .cat:hover, .cat:focus-within { background: rgba(27, 41, 83, .035); }
 .cat:hover .cat__meta, .cat:focus-within .cat__meta { opacity: 0; transform: translateY(-10px); }
