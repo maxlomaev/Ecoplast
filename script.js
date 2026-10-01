@@ -177,6 +177,7 @@
   const heroWords = splitWords(heroTitle);
   gsap.set(heroWords, { yPercent: 110 });
   gsap.set('[data-hero-btn]', { opacity: 0, y: 20 });
+  gsap.set('[data-hero-eyebrow]', { opacity: 0, y: 12 });
   gsap.set('[data-hero-art]', { opacity: 0 });
   gsap.set('[data-hero-img]', { scale: 1.12 });
   gsap.set('.header', { yPercent: -100 });
@@ -191,7 +192,8 @@
     .to('[data-hero-art]', { opacity: 1, duration: 1.2, ease: 'power2.out' }, '-=.6')
     .to('[data-hero-img]', { scale: 1, duration: 2.2, ease: 'expo.out' }, '<')
     .to('.header', { yPercent: 0, duration: 1, ease: 'expo.out', clearProps: 'transform' }, '<.2')
-    .to(heroWords, { yPercent: 0, duration: 1.1, stagger: .09, ease: 'expo.out' }, '<.15')
+    .to('[data-hero-eyebrow]', { opacity: 1, y: 0, duration: .9, ease: 'expo.out' }, '<.1')
+    .to(heroWords, { yPercent: 0, duration: 1.1, stagger: .09, ease: 'expo.out' }, '<.05')
     .to('[data-hero-btn]', { opacity: 1, y: 0, duration: .9, ease: 'expo.out' }, '<.35');
 
   gsap.to('.hero__content', {

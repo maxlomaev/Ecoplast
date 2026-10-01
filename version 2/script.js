@@ -142,11 +142,13 @@
     if (!hasGSAP || still) return;
     const lines = slide.querySelectorAll('.ln > span');
     const btn = slide.querySelector('.btn');
+    const label = slide.querySelector('.slide__label');
     const img = slide.querySelector('.slide__media img');
     const tl = gsap.timeline();
     tl.fromTo(img, { opacity: 0, x: 120 * dir, scale: 1.06 }, { opacity: 1, x: 0, scale: 1, duration: 1.4, ease: 'expo.out' })
       .fromTo(lines, { yPercent: 110 }, { yPercent: 0, duration: 1.1, stagger: .09, ease: 'expo.out' }, .15)
-      .fromTo(btn, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .9, ease: 'expo.out' }, .45);
+      .fromTo(btn, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .9, ease: 'expo.out' }, .45)
+    if (label) tl.fromTo(label, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .9, ease: 'expo.out' }, .1);
     return tl;
   };
   const restartProgress = () => {
@@ -240,6 +242,7 @@
   gsap.delayedCall(.5, () => { animateIn(slides[0], 1); restartProgress(); });
   gsap.set(slides[0].querySelectorAll('.ln > span'), { yPercent: 110 });
   gsap.set(slides[0].querySelector('.btn'), { opacity: 0 });
+  gsap.set(slides[0].querySelector('.slide__label'), { opacity: 0 });
   gsap.set(slides[0].querySelector('.slide__media img'), { opacity: 0 });
 
   /* Статистика */
