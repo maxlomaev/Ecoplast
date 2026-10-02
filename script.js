@@ -291,7 +291,7 @@
   /* ---------- Иллюстрация FAQ: чертёж «рисуется» ---------- */
   const draw = document.querySelector('[data-draw] svg');
   if (draw) {
-    const paths = draw.querySelectorAll('path');
+    const paths = draw.querySelectorAll('path, line, circle, rect, ellipse');
     paths.forEach(p => {
       const len = p.getTotalLength();
       p.style.strokeDasharray = len;

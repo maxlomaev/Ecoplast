@@ -198,7 +198,7 @@ button { cursor: pointer; }
 .cats { padding-bottom: 120px; }
 .cats__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--blue); border-left: 1px solid var(--line); }
 .cat {
-  position: relative; overflow: hidden; outline: 0; height: 260px;
+  position: relative; overflow: hidden; outline: 0; height: 340px;
   border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
   transition: background .5s var(--ease);
 }
@@ -224,7 +224,12 @@ button { cursor: pointer; }
 .cat:hover .cat__subs li:nth-child(4), .cat:focus-within .cat__subs li:nth-child(4) { transition-delay: .27s; }
 .cat:hover .cat__subs li:nth-child(5), .cat:focus-within .cat__subs li:nth-child(5) { transition-delay: .32s; }
 
-.cat__illu { position: absolute; right: 0; top: 0; width: 170px; height: 120px; object-fit: contain; object-position: right top; pointer-events: none; transition: opacity .5s var(--ease), transform .8s var(--ease); }
+.cat__illu { position: absolute; left: 0; right: 0; top: 24px; bottom: 96px; width: 100%; height: calc(100% - 120px); object-fit: contain; object-position: center bottom; pointer-events: none; transition: opacity .5s var(--ease), transform .8s var(--ease); }
+.cat__illu--truby, .cat__illu--b2b { object-position: right bottom; }
+/* Полный каталог и B2B — крупнее */
+.cat__illu--katalog { left: -10%; width: 120%; height: calc(100% - 100px); top: 0; object-fit: cover; object-position: center bottom; }
+.cat__illu--b2b { top: -6px; height: calc(100% - 90px); }
+.cat__meta { display: none; }
 .cat__meta, .cat__head, .cat__subs { z-index: 1; }
 .cat:hover .cat__illu, .cat:focus-within .cat__illu { opacity: .12; transform: translateY(-10px); }
 

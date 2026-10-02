@@ -240,10 +240,10 @@ html:not(.js) .loader { display: none; }
   transition: background .6s var(--ease), box-shadow .6s var(--ease);
 }
 .cat__icon {
-  position: absolute; left: 20px; top: 20px; width: 104px; height: 104px; border-radius: 22px; background: #fff;
+  position: absolute; left: 22px; top: 20px; width: 72px; height: 72px;
   display: grid; place-items: center; transition: transform .6s var(--ease), opacity .4s var(--ease);
 }
-.cat__icon img { width: 68px; height: 68px; }
+.cat__icon img { width: 72px; height: 72px; }
 /* Заголовок + стрелка: внизу, при наведении уезжают к верху карточки */
 .cat__head {
   position: absolute; left: 20px; right: 20px; bottom: 20px; height: 40px;
@@ -309,7 +309,7 @@ html:not(.js) .loader { display: none; }
 .faq .container { position: relative; }
 .faq__body { position: relative; display: grid; grid-template-columns: 1fr 670px; margin-top: 56px; }
 .faq__aside { position: relative; min-height: 540px; }
-.faq__illu { position: absolute; left: -186px; top: 78px; width: 491px; height: 437px; }
+.faq__illu { position: absolute; left: 0; top: 40px; width: 520px; height: 431px; }
 .faq__illu svg { width: 100%; height: 100%; overflow: visible; }
 .faq__aside .btn { position: absolute; left: 230px; top: 490px; }
 .acc { border-top: 1px solid var(--line); }
